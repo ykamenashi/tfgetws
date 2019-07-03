@@ -8,6 +8,7 @@
 1. enjoy!
 
 ### how to use
+#### tfgetws
 ```
 $ ls -d ./.terraform
 -> ./.terraform/
@@ -19,6 +20,9 @@ ls -d ./.terraform
 $ tfgetws
 $
 ```
+
+#### tfsetws
+* simple wrapper to `terraform workspace select $1`
 
 ### merge onto your shell's prompt
 
