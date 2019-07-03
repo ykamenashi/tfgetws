@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+TF_ACTIVE_WORKSPACE_FILE='./.terraform/environment'
+
+if [ ! -f $TF_ACTIVE_WORKSPACE_FILE ] ; then
+	echo -n ''
+	exit 0
+else
+	cat $TF_ACTIVE_WORKSPACE_FILE | sed -e 's/\n//g'
+	exit 0
+fi
+
