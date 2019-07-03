@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+usage(){
+  echo ''
+  echo "$0: terraform workspace selection wrapper."
+  echo ''
+  exit 0
+}
+
+if [ $# -ne 1 ] ; then
+  usage
+fi
+
+terraform workspace select $1
