@@ -26,4 +26,4 @@ $
 
 ### merge onto your shell's prompt
 
-TODO
+* see [install manual](https://github.com/ykamenashi/tfgetws/blob/master/installer.bash.template)
