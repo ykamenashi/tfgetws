@@ -1,0 +1,10 @@
+#!/bin/false
+
+#### put these text into your ~/.bashrc ####
+YOUR_TFGETWS_PATH=~/bin/tfgetws
+if [ ! -z "$PS1" ] ; then
+  if [ -f $YOUR_TFGETWS_PATH ] ; then
+    export PS1=$PS1' terraform:$(tfgetws)\n\$ '
+  fi
+fi
+
