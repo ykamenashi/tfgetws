@@ -8,7 +8,7 @@
 1. enjoy!
 
 ### how to use
-#### tfgetws
+#### tfgetws basic function
 ```
 $ ls -d ./.terraform
 -> ./.terraform/
@@ -19,6 +19,19 @@ ls -d ./.terraform
 -> ls: ./.terraform/: No such file or directory
 $ tfgetws
 $
+```
+
+#### `terraform workspace list` alias
+```
+tfgetws a
+tfgetws all
+tfgetws g
+tfgetws get
+```
+
+#### usage
+```
+tfgetws help
 ```
 
 #### tfsetws

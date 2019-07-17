@@ -2,11 +2,40 @@
 
 TF_ACTIVE_WORKSPACE_FILE='./.terraform/environment'
 
-if [ ! -f $TF_ACTIVE_WORKSPACE_FILE ] ; then
-	echo -n ''
-	exit 0
+usage(){
+  CMDNAME=$(basename $0)
+  cat << EOF
+
+  $CMDNAME: terraform workspace indicator
+
+usage1: $CMDNAME
+usage2: $CMDNAME all
+usage3: $CMDNAME a
+
+EOF
+  exit 0
+}
+
+if [ $# -eq 0 ] ; then
+
+  if [ ! -f $TF_ACTIVE_WORKSPACE_FILE ] ; then
+      echo -n ''
+      exit 0
+  else
+      cat $TF_ACTIVE_WORKSPACE_FILE | sed -e 's/\n//g'
+      exit 0
+  fi
 else
-	cat $TF_ACTIVE_WORKSPACE_FILE | sed -e 's/\n//g'
-	exit 0
+  if [ $# -eq 1 ] ; then 
+    ARGSTR=$1
+    case $ARGSTR in
+      g|get|l|list|a|all)
+        terraform workspace list
+      ;;
+      *)
+        usage
+      ;;
+    esac
+  fi
 fi
 
